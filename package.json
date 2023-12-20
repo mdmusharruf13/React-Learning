@@ -1,0 +1,26 @@
+{
+  "name": "react-learning",
+  "version": "1.0.0",
+  "description": "learning react from scratch",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mdmusharruf13/React-Learning.git"
+  },
+  "author": "Md Musharruf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdmusharruf13/React-Learning/issues"
+  },
+  "homepage": "https://github.com/mdmusharruf13/React-Learning#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
