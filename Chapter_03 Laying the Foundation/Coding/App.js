@@ -8,7 +8,7 @@ const heading = React.createElement(
     {
         id: "title",
         key: "h2"
-    }, 
+    },
     "Heading with h2"
 );
 
