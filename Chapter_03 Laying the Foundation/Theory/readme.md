@@ -33,3 +33,29 @@ it is just a way of writing HTML inside JavaScript.
 
 ### babel advantages   
 + Readability
++ secure (sanitization)
+
+### Components 
++ Functional based Components
++ Class based Components
+
+Class based is older way of writing the code. Functional based is new way of writing the code.  
+functional component is nothing but a javascript function that return a component or jsx. It can also return react element. 
+Functional component or any component the name start with a capital letter (not mandatory but goot practice)
+
+### Functional component example
+```
+const HeaderComponent = () => {
+  return <h1>Heading from functonal component</h1>;
+}
+```
+
+__Note :__ React elements are rendered direct by when it is functional component we should wrap it with "<name />" angular braces. see below example
+```js
+// if it is react element
+render(react-element)
+
+// if it is functional component
+render(<reactComponent/>)
+```
+
