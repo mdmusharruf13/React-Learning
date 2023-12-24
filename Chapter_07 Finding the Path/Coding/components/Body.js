@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import restaurantList, { jsonData, swiggy_api_URL } from "../Constants";
 import ResturantCard from "./Restaurant";
 import Shimmer from "./Shimmer";
+import { link } from "./Menu";
 
 
 const Body = () => {
@@ -12,11 +13,21 @@ const Body = () => {
     const [inputSearch, setInputSearch] = useState("");
     const [restaurantItem, setRestaurantItem] = useState(restaurantList);
 
+    // useEffect(() => {
+    //     getRestaurants();
+    // });
+
+    async function getRestaurants() {
+        const data = await fetch(link);
+        const json = await data.json();
+        // console.log(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards);
+    }
+
 
     if(!restaurantItem) return null;
 
     if(restaurantItem?.length === 0) {
-        return <h1>No restaurant match your Filter!!</h1>
+        return <Shimmer />
     }
 
     return (restaurantItem?.length === 0) ? ( <Shimmer /> ) : (
