@@ -11,7 +11,6 @@ const App = () => {
             <About />
             <Profile name={"musharruf"} />
             <ProfileClassComponrnt name=" musharrufClass 1" lang="js" />
-            <ProfileClassComponrnt name=" musharrufClass 2" lang="js" />
         </>
     )
 }

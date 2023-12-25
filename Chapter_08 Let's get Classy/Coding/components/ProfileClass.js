@@ -6,16 +6,31 @@ class Profile extends React.Component {
         super(props);
         // create state
         this.state = {
-            count : 0,
-            count2 : 0,
+            userInfo: {
+                name: "dummy name",
+                location: "dummy location"
+            }
         };
         console.log("child constructor" + this.props.name)
     }
-    componentDidMount() {
+    async componentDidMount() {
         // best place to make api calls
+        const data = await fetch("https://api.github.com/users/mdmusharruf13");
+        const json = await data.json();
+        console.log(json);
+        this.setState({
+            userInfo: json
+        }); 
         console.log("child component did mount" + this.props.name)
     }
-    
+
+    componentDidUpdate() {
+        console.log("child componentDidUpdate" + this.props.name)
+    }
+    componentWillUpdate() {
+        console.log("child componentWillUpdate" + this.props.name)
+    }
+
     render() {
         console.log("child render" + this.props.name)
         // let { count } = this.state;
@@ -23,18 +38,9 @@ class Profile extends React.Component {
             <div>
                 <h1>ProfileClass component</h1>
                 <h2>Name : {this.props.name}</h2>
-                <h2>Count : {this.state.count}</h2>
-                <button 
-                    onClick={() => {
-                        // we do not mutate state directly
-                        // Never do this.state = something
-                        this.setState({
-                            count:  1
-                        })
-                    }}
-                >
-                    increament
-                </button>
+                <h2>Json Data :-</h2>
+                <h3>Name: {this.state.userInfo.name}</h3>
+                <img src={this.state.userInfo.avatar_url}/>
             </div>
         )
     }
