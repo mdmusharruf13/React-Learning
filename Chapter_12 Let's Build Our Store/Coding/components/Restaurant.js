@@ -1,8 +1,18 @@
 import { useContext } from "react";
 import UserContext from "../utils/UserContext";
+import { addItem } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
 
 // Config Driven UI
 const ResturantCard = ({name, cuisines, cloudinaryImageId, lastMileTravelString}) => {
+
+    const item = {name, cuisines, cloudinaryImageId, lastMileTravelString};
+
+    const dispatch = useDispatch();
+
+    const handleAddItem = (item) => {
+        dispatch(addItem(item));
+    }
     const { user } = useContext(UserContext);
     return (
         <div className="card">
@@ -10,6 +20,7 @@ const ResturantCard = ({name, cuisines, cloudinaryImageId, lastMileTravelString}
             <h2>{name}</h2>
             <h3>{cuisines}</h3>
             <h4>{lastMileTravelString} {user.name}</h4>
+            <button onClick={() => handleAddItem(item)}>Add Item</button>
         </div>
     )
 };

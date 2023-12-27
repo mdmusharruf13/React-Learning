@@ -83,3 +83,19 @@ li {
     flex-direction: column;
     align-items: center;
 }
+
+.fooditem {
+    display: flex;
+    border: 2px solid black;
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+}
+
+.fooditem img {
+    width: 100%;
+}
+
+.cart-items {
+    display: flex;
+}
