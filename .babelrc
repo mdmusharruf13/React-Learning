@@ -1,11 +1,17 @@
-// with options
+// // with options
+// {
+//     "plugins": [
+//         [
+//             "transform-remove-console",
+//             {
+//                 "exclude": ["error", "warn", "log"]
+//             }
+//         ]
+//     ]
+// }
 {
-    "plugins": [
-        [
-            "transform-remove-console",
-            {
-                "exclude": ["error", "warn", "log"]
-            }
-        ]
+    "presets": [
+        ["@babel/preset-env", {"targets": { "node": "current" }}],
+        ["@babel/preset-react", { "runtime": "automatic" }],
     ]
 }
